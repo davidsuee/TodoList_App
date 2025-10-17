@@ -46,3 +46,21 @@ flutter {
     source = "../.."
 }
 7
+//
+buildscript {
+    dependencies {
+        classpath 'com.google.gms:google-services:4.3.15'  // Add this
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services' // Add this at bottom
+
+android {
+    compileSdkVersion 34
+    ...
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:32.3.1') // Add this
+    implementation 'com.google.firebase:firebase-auth'
+}
